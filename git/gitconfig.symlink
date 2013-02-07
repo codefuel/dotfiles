@@ -1,0 +1,53 @@
+[user]
+  name = [NAME]
+  email = [EMAIL]
+
+[alias]
+  co = checkout
+  promote = !${DOTFILES}/bin/git-promote
+  wtf = !${DOTFILES}/bin/git-wtf
+  rank-contributers = !${DOTFILES}/bin/get-rank-contributers
+  count = !git shortlog -sn
+  ci = commit
+  taglist = log --reverse --format=%h%d --tags --no-walk
+  st = status
+  up = pull --rebase
+  br = branch
+
+[apply]
+  whitespace = nowarn
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = true
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[merge] summary = true
+  tool = vimdiff
+
+[mergetool]
+  keepBackup = false
+
+[github]
+  user = codefuel
+	email = codefuel@vicxar.com
+
+[core]
+  excludesfile = ~/.gitignore
+  editor = vim
+
+[push]
+	default = upstream
