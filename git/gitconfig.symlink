@@ -1,6 +1,6 @@
 [user]
-  name = [NAME]
-  email = [EMAIL]
+  name = ${USER}
+  email = ${USER}@${COMPANY_DOMAIN}.com
 
 [alias]
   co = checkout
