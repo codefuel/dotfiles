@@ -7,10 +7,13 @@
 " Show line numbers on vi startup
   set number
 
+" Disable beep and window flashing
+  set noerrorbells visualbell t_vb=
+  autocmd GUIEnter * set visualbell t_vb=
+
 " By default, Vim comes up with tabs set to 8 columns. The Perl Style Guide
 " requires them to be set to 4 and not to be replaced by spaces. Add the
 " following to your ~/.vimrc file:
-
   setlocal tabstop=2
   setlocal shiftwidth=2
 
@@ -275,3 +278,41 @@ hi Comment ctermfg=green
 
 " Turn off auto indent
 filetype indent off
+
+" ============== Split Screens ======================
+
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+map <C-i> :vsplit .<return>
+map <C-o> :split .<return>
+
+function! MarkWindowSwap()
+  let g:markedWinNum = winnr()
+endfunction
+
+function! DoWindowSwap()
+  "Mark destination
+  let curNum = winnr()
+  let curBuf = bufnr( "%" )
+  exe g:markedWinNum . "wincmd w"
+  "Switch to source and shuffle dest->source
+  let markedBuf = bufnr( "%" )
+  "Hide and open so that we aren't prompted and keep history
+  exe 'hide buf' curBuf
+  "Switch to dest and shuffle source->dest
+  exe curNum . "wincmd w"
+  "Hide and open so that we aren't prompted and keep history
+  exe 'hide buf' markedBuf
+endfunction
+
+nmap <silent> <leader>mw :call MarkWindowSwap()<CR>
+nmap <silent> <leader>pw :call DoWindowSwap()<CR>
+" =========
+
+" ================ Scrolling ========================
+
+set scrolloff=8		 "Start scrolling when we're 8 lines away from margins
+"set sidescrolloff=15
+set sidescroll=1

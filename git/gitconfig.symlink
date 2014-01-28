@@ -1,6 +1,6 @@
 [user]
   name = ${USER}
-  email = ${USER}@${COMPANY_DOMAIN}.com
+  email = ${USER}@${COMPANY_DOMAIN}
 
 [alias]
   co = checkout
@@ -42,12 +42,13 @@
   keepBackup = false
 
 [github]
-  user = codefuel
-	email = codefuel@vicxar.com
+  user = ${USER}
+	email = ${USER}@${GITHUB_DOMAIN}
 
 [core]
-  excludesfile = ~/.gitignore
+  excludesfile = $HOME/.gitignore
   editor = vim
+  autocrlf = input
 
 [push]
-	default = upstream
+	default = current #upstream
