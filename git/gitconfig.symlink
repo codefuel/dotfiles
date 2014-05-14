@@ -42,8 +42,8 @@
   keepBackup = false
 
 [github]
-  user = ${USER}
-	email = ${USER}@${GITHUB_DOMAIN}
+  user = ${GITHUB_USER}
+	email = ${GITHUB_USER}@users.noreply.github.com
 
 [core]
   excludesfile = $HOME/.gitignore

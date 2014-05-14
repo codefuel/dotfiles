@@ -26,8 +26,8 @@ alias gdel='git branch -D'
 alias gmu='git fetch origin -v; git fetch upstream -v; git merge upstream/master'
 alias gll='git log --graph --pretty=oneline --abbrev-commit'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
-alias gla="git log --author=$USER"
-alias glam="git log --pretty=medium --stat --author=$USER"
+alias gla="git log --author=$GIT_USER"
+alias glam="git log --pretty=medium --stat --author=$GIT_USER"
 alias gpr="git pull --rebase"
 
 case $OSTYPE in
