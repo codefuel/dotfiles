@@ -13,6 +13,8 @@ export DOTFILES="${HOME}/.dotfiles"
 # projects folder that we can `c [tab]` to
 export PROJECTS=/site
 
+# bin dir
+export PATH="${HOME}/bin:${PATH}"
 
 source "${DOTFILES}/bash/colors.theme"
 source "${DOTFILES}/bash/base.theme"
