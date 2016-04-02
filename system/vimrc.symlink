@@ -1,11 +1,60 @@
+let g:gruvbox_italic=0
+
+set ffs=unix,dos,mac "Default file types
+let mapleader = ' '
+
 " Filetype plugins
   filetype plugin on
+
+" Source plugins
+  source ~/.vimrc.packages
+
+""" Plugin configuration
+
+"" CtrlP
+" Adds ; as the Ctrl+P fuzzy search
+nmap ; :CtrlPBuffer<CR>
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+" Convert 1.8 Ruby hashes to 1.9+
+"nnoremap <F12> :%s/:\([^ ]*\)\(\s*\)=>/\1:/g<return>
+
+" Expand %% into the directory of the current file
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%’
+
+set list
+set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
+
+" LightLine
+let g:lightline = {
+  \
+  \ }
+
+"""
 
 " Show hidden characters
 "  set list
 
 " Show line numbers on vi startup
   set number
+
+" Toggle between relative numbers
+  function! RelativeNumberToggle()
+      if(&relativenumber == 0)
+          set relativenumber
+      else
+          set norelativenumber
+      endif
+  endfunc
+  noremap <leader>nu :call RelativeNumberToggle()<CR>
 
 " Disable beep and window flashing
   set noerrorbells visualbell t_vb=
@@ -27,6 +76,18 @@
   autocmd FileType perl
     \ setlocal shiftwidth=4 |
     \ setlocal tabstop=4
+  autocmd FileType ruby
+    \ setlocal shiftwidth=2 |
+    \ setlocal tabstop=2
+  autocmd FileType haml
+    \ setlocal shiftwidth=2 |
+    \ setlocal tabstop=2
+  autocmd FileType html
+    \ setlocal shiftwidth=2 |
+    \ setlocal tabstop=2
+
+" Autosource .vimrc
+autocmd! bufwritepost .vimrc source ~/.vimrc
 
 " Highlight search term
   set hlsearch
@@ -49,10 +110,15 @@
 
 " Have syntax highligting in terminals which can display colors:
 
-if has('syntax') && (&t_Co > 2)
-    syntax on
-endif
+"if has('syntax') && (&t_Co > 2)
+syntax enable
+"endif
 
+" 256 colors
+let &t_Co=256
+colorscheme solarized
+let g:gruvbox_termcolors=16
+set background=dark
 
 " (in editor) Convert all tabs to space or ASCII-9 (per 'expandtab'), on
 " lines 1_to_end-of-file.
@@ -60,14 +126,12 @@ endif
 " :1,$retab!
 
 " Information bar
-hi User1 term=underline cterm=bold ctermfg=Cyan ctermbg=Blue guifg=#40ffff guibg=#0000aa
-set laststatus=2
-"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-"set statusline=%<[%02n]\ %F%(\ %m%h%w%y%r%)\ %a%=\ %8l,%c%V/%L\ (%P)\ [%08O:%02B]
-set statusline=%1*%F%m%r%h%w%=%(%c%V\ %l/%L\ %P%)
+"hi User1 term=underline cterm=bold ctermfg=Cyan ctermbg=Green guifg=#40ffff guibg=#0000aa
+"set laststatus=2
+"set statusline=%1*%F%m%r%h%w%=%(%c%V\ %l/%L\ %P%)
 
 " Turn off information bar
-" set laststatus=2
+set laststatus=2
 
 " Toggle auto-indenting for code paste (<F2>), do it in "insert" mode
 nnoremap <F2> :set invpaste paste?<CR>
@@ -313,6 +377,10 @@ nmap <silent> <leader>pw :call DoWindowSwap()<CR>
 
 " ================ Scrolling ========================
 
-set scrolloff=8		 "Start scrolling when we're 8 lines away from margins
+set scrolloff=8    "Start scrolling when we're 8 lines away from margins
 "set sidescrolloff=15
 set sidescroll=1
+
+" command to write to file that requires sudo if opened in readonly mode
+cmap w!! %!sudo tee > /dev/null %
+

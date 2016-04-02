@@ -1,0 +1,53 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" :Plug* - for plungin related commands
+"
+" => Vim-plug && Plug Specific Settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+call plug#begin() "('~/.vim/plugged')
+
+Plug 'kchmck/vim-coffee-script'
+Plug 'tpope/vim-git'
+Plug 'xenoterracide/html.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'itspriddle/vim-jquery'
+Plug 'leshill/vim-json'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+
+" Ruby
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-bundler'
+Plug 'thoughtbot/vim-rspec'
+Plug 'Keithbsmiley/rspec.vim'
+
+" Tools
+Plug 'rking/ag.vim'
+Plug 'nelstrom/vim-visual-star-search'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'morhetz/gruvbox'
+Plug 'itchyny/lightline.vim'
+"Plug 'skwp/vim-colors-solarized'
+
+" Text Objects
+Plug 'kana/vim-textobj-user'
+Plug 'bootleq/vim-textobj-rubysymbol'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'coderifous/textobj-word-column.vim'
+Plug 'godlygeek/tabular'
+Plug 'tomtom/tcomment_vim'
+Plug 'majutsushi/tagbar'
+
+call plug#end()
+filetype plugin indent on
+
+" ================ Rails ========================
+let g:rspec_command = "!bundle exec rspec {spec}"
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
