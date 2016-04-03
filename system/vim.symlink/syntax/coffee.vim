@@ -235,3 +235,7 @@ syn cluster coffeeAll contains=coffeeStatement,coffeeRepeat,coffeeConditional,
 if !exists('b:current_syntax')
   let b:current_syntax = 'coffee'
 endif
+
+set sw=2
+set sts=2
+set ts=2

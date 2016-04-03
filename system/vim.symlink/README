@@ -1,0 +1,34 @@
+## Vim Plugins:
+https://github.com/junegunn/vim-plug
+
+# Add to .vimrc:
+  " Source plugins
+    source ~/.vimrc.packages
+
+# Install vim plugin manager, https://github.com/junegunn/vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+source ~/.vimrc.packages
+
+# Install Plugin:
+vim
+# from vim run: :PlugInstall
+
+## Add silversearcher-ag
+sudo apt-get update
+sudo apt-get install -y automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev
+
+# < ubuntu 13
+sudo apt-get install python-software-properties
+sudo apt-get update
+
+# go to: https://github.com/ggreer/the_silver_searcher and follow installation
+
+## Add exuberant ctags
+sudo apt-get install exuberant-ctags
+  # to run from vim: :Tagbar
+
+
+### Notes
+:help [plugin_name]
