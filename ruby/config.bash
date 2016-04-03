@@ -1,5 +1,5 @@
 # rbenv
-export PATH="${HOME}/.rbenv/bin:${PATH}"
+export PATH="${HOME}/.rbenv/bin:/opt/src/phantomjs-1.9.7-linux-x86_64/bin:bin/phantomjs:${PATH}"
 [[ `which rbenv` ]] && eval "$(rbenv init -)"
 
 [[ -e ~/.rbenv/completions/rbenv.bash ]] && source ~/.rbenv/completions/rbenv.bash
