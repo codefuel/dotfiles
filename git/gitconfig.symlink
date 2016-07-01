@@ -13,6 +13,7 @@
   st = status
   up = pull --rebase
   br = branch
+  sincelasttag = "!git log $(git log --format='%d' | grep 'tag:' | head -n1 | perl -ple 's/.*tag://; s/\\x29$//;').."
 
 [apply]
   whitespace = nowarn
