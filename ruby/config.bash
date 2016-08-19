@@ -2,7 +2,11 @@
 export PATH="${HOME}/.rbenv/bin:/opt/src/phantomjs-1.9.7-linux-x86_64/bin:bin/phantomjs:${PATH}"
 [[ `which rbenv` ]] && eval "$(rbenv init -)"
 
-[[ -e ~/.rbenv/completions/rbenv.bash ]] && source ~/.rbenv/completions/rbenv.bash
+#[[ -e ~/.rbenv/completions/rbenv.bash ]] && source ~/.rbenv/completions/rbenv.bash
+
+# chruby
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh # To enable auto-switching of Rubies specified by .ruby-version files
 
 # Bundler Commands
 alias b='bundle'
