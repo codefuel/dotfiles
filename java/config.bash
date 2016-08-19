@@ -1,5 +1,6 @@
-export JAVA6_HOME=/site/jdk/jdk1.6.0_37/
-export JAVA7_HOME=/site/jdk/jdk1.7.0_09/
+export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
+export JAVA_7_HOME=$(/usr/libexec/java_home -v1.7)
+export JAVA_6_HOME=$(/usr/libexec/java_home -v1.6)
 export IDEA_JDK=${JAVA7_HOME}
 
 setjdk jdk1.7.0_09 &>> /dev/null
