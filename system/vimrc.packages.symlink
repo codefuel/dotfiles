@@ -22,6 +22,9 @@ Plug 'tpope/vim-bundler'
 Plug 'thoughtbot/vim-rspec'
 Plug 'Keithbsmiley/rspec.vim'
 
+" React
+Plug 'mxw/vim-jsx'
+
 " Tools
 Plug 'rking/ag.vim'
 Plug 'nelstrom/vim-visual-star-search'
@@ -31,6 +34,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
+Plug 'editorconfig/editorconfig-vim'      " EditorConfig vim plugin
 "Plug 'skwp/vim-colors-solarized'
 
 " Text Objects
