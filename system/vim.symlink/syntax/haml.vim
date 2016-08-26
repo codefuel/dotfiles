@@ -106,4 +106,7 @@ if main_syntax == "haml"
   unlet main_syntax
 endif
 
+set sw=2
+set sts=2
+set ts=2
 " vim:set sw=2:
