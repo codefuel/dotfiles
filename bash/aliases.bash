@@ -24,11 +24,11 @@ alias md='mkdir -p'
 alias rd='rmdir'
 
 # Dotfile Management
-alias bashrc='vi $HOME/.bashrc'
-alias localrc='vi $HOME/.localrc'
-alias sourcebash='source $HOME/.bashrc; echo "DONE: source $HOME/.bashrc"'
-alias sourcelocal='source $HOME/.localrc; echo "DONE: source $HOME/.localrc"'
-alias sourceall='source $HOME/.bashrc; source $HOME/.localrc; echo "DONE: source $HOME/.bashrc; source $HOME/.localrc"'
+alias bashrc='vi ~/.bashrc'
+alias localrc='vi ~/.localrc'
+alias sourcebash='source ~/.bashrc; echo "DONE: source ~/.bashrc"'
+alias sourcelocal='source ~/.localrc; echo "DONE: source ~/.localrc"'
+alias sourceall='source ~/.bashrc; source ~/.localrc; echo "DONE: source ~/.bashrc; source ~/.localrc"'
 
 # Utility
 alias cbcopy='xclip -selection clipboard'

@@ -47,7 +47,7 @@
 	email = ${GITHUB_USER}@users.noreply.github.com
 
 [core]
-  excludesfile = $HOME/.gitignore
+  excludesfile = ~/.gitignore
   editor = vim
   autocrlf = input
 
