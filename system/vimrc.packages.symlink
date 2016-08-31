@@ -8,7 +8,6 @@ call plug#begin() "('~/.vim/plugged')
 Plug 'kchmck/vim-coffee-script'
 Plug 'tpope/vim-git'
 Plug 'xenoterracide/html.vim'
-Plug 'pangloss/vim-javascript'
 Plug 'itspriddle/vim-jquery'
 Plug 'leshill/vim-json'
 Plug 'cakebaker/scss-syntax.vim'
@@ -25,6 +24,10 @@ Plug 'Keithbsmiley/rspec.vim'
 " React
 Plug 'mxw/vim-jsx'
 
+" JavaScript
+Plug 'pangloss/vim-javascript'                  " updated JavaScript syntax
+Plug 'othree/javascript-libraries-syntax.vim'
+
 " Tools
 Plug 'rking/ag.vim'
 Plug 'nelstrom/vim-visual-star-search'
@@ -34,7 +37,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
-Plug 'editorconfig/editorconfig-vim'      " EditorConfig vim plugin
+Plug 'editorconfig/editorconfig-vim'            " EditorConfig vim plugin
 "Plug 'skwp/vim-colors-solarized'
 
 " Text Objects
