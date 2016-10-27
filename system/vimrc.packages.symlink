@@ -27,6 +27,7 @@ Plug 'mxw/vim-jsx'
 " JavaScript
 Plug 'pangloss/vim-javascript'                  " updated JavaScript syntax
 Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'eslint/eslint'
 
 " Tools
 Plug 'rking/ag.vim'
