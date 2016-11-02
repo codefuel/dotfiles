@@ -29,6 +29,8 @@ alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias gla="git log --author=$GIT_USER"
 alias glam="git log --pretty=medium --stat --author=$GIT_USER"
 alias gpr="git pull --rebase"
+alias lg1="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias lg2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
 
 case $OSTYPE in
   linux*)
