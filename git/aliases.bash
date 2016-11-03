@@ -9,7 +9,6 @@ alias gst='git status'
 alias gs='git status'
 alias gss='git status -s'
 alias gl='git pull'
-alias gup='git pull --rebase'
 alias gp='git push'
 alias gpo='git push origin'
 alias gdv='git diff -w "$@" | vim -R -'
@@ -29,6 +28,8 @@ alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias gla="git log --author=$GIT_USER"
 alias glam="git log --pretty=medium --stat --author=$GIT_USER"
 alias gpr="git pull --rebase"
+alias grc="git rebase --continue"
+alias grs="git rebase --skip"
 alias lg1="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias lg2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
 
