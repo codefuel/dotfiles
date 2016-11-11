@@ -36,6 +36,9 @@
   changed = green
   untracked = cyan
 
+[include]
+  path = ~/.gitconfig.local
+
 [merge] summary = true
   tool = vimdiff
 
@@ -44,7 +47,7 @@
 
 [github]
   user = ${GITHUB_USER}
-	email = ${GITHUB_USER}@users.noreply.github.com
+  email = ${GITHUB_USER}@users.noreply.github.com
 
 [core]
   excludesfile = ~/.gitignore
@@ -52,4 +55,17 @@
   autocrlf = input
 
 [push]
-	default = current #upstream
+  default = current #upstream
+
+[rebase]
+    autoStash = true
+
+[pull]
+    rebase = true
+
+[branch]
+    autosetuprebase = always
+
+[branch "master"]
+    remote = origin
+    merge = refs/heads/master
