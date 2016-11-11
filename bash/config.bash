@@ -40,3 +40,6 @@ function rh {
 conditionally_prefix_path "${DOTFILES}/bin"
 conditionally_prefix_path "${HOME}/bin"
 conditionally_prefix_path "${HOME}/local/bin"
+
+GPG_TTY=$(tty)
+export GPG_TTY
