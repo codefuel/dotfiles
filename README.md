@@ -1,8 +1,8 @@
 # dotfiles
 
-##Configuration files
+## Configuration files
 
-###INSTALLATION
+### INSTALLATION
 
 ```cd
 mkdir -p src; cd src
