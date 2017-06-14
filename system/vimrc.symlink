@@ -30,7 +30,6 @@ endif
 " Expand %% into the directory of the current file
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%’
 
-set list
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 
 " LightLine
