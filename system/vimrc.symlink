@@ -122,6 +122,11 @@ let &t_Co=256
 let g:gruvbox_termcolors=16
 set background=dark
 
+" Backspace works in Insert mode (e.g. not inserting a ^?), but won't delete
+" over line breaks, or automatically-inserted indentation, or the place where
+" insert mode started:
+set backspace=indent,eol,start
+
 " (in editor) Convert all tabs to space or ASCII-9 (per 'expandtab'), on
 " lines 1_to_end-of-file.
 
