@@ -118,7 +118,7 @@ syntax enable
 
 " 256 colors
 let &t_Co=256
-colorscheme solarized
+"colorscheme solarized
 let g:gruvbox_termcolors=16
 set background=dark
 
