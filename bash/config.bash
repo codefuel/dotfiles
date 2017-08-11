@@ -7,7 +7,6 @@ shopt -s checkwinsize
 shopt -s cdspell
 
 # colored grep
-export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;33'
 
 # colored ls
