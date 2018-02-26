@@ -15,8 +15,8 @@ SCM_SVN_CHAR='⑆'
 SCM_NONE='NONE'
 SCM_NONE_CHAR='○'
 
-RBENV_THEME_PROMPT_PREFIX=' |'
-RBENV_THEME_PROMPT_SUFFIX='|'
+RUBY_THEME_PROMPT_PREFIX=' |'
+RUBY_THEME_PROMPT_SUFFIX='|'
 
 function scm {
   if [[ -f .git/HEAD ]]; then SCM=$SCM_GIT
@@ -82,9 +82,13 @@ function svn_prompt_vars {
 }
 
 function rbenv_version_prompt {
-  if which rbenv &> /dev/null; then
-    rbenv=$(rbenv version-name) || return
-    echo -e "$RBENV_THEME_PROMPT_PREFIX$rbenv$RBENV_THEME_PROMPT_SUFFIX"
+  # if which rbenv &> /dev/null; then
+  #   rbenv=$(rbenv version-name) || return
+  #   echo -e "$RUBY_THEME_PROMPT_PREFIX$rbenv$RUBY_THEME_PROMPT_SUFFIX"
+  # fi
+  if which ruby &> /dev/null; then
+    rubyversion=$(which ruby | cut -d/ -f5) || return
+    echo -e "$RUBY_THEME_PROMPT_PREFIX$rubyversion$RUBY_THEME_PROMPT_SUFFIX"
   fi
 }
 
