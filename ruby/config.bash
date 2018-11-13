@@ -8,6 +8,9 @@
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh # To enable auto-switching of Rubies specified by .ruby-version files
 
+# Default Ruby
+chruby ruby-2.5.0
+
 # Bundler Commands
 alias b='bundle'
 alias be='bundle exec'
