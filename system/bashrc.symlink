@@ -46,7 +46,7 @@ unset config_file
 
 # Add homebrew to path
 if uname -s | grep -q Darwin; then
-  export PATH="/usr/local/bin:$PATH"
+  export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
 
 # use a .localrc file for our SUPER SECRECT STUFF
