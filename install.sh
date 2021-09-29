@@ -25,5 +25,5 @@ echo $dotfile
 	fi
 done
 
-echo !!! Need to source: ~/.bashrc
+echo !!! Need to source: ~/.bashrc, ~/.zshenv, and/or ~/.zshrc
 
