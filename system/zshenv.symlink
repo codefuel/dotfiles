@@ -1,0 +1,23 @@
+#!/usr/bin/env zsh
+
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# shortcut to dotfiles
+export DOTFILES="${HOME}/src/dotfiles"
+
+# projects folder that we can `c [tab]` to
+export PROJECTS=/site
+
+# bin dir
+export PATH="${HOME}/bin:${PATH}"
+
+# Add homebrew to path
+if uname -s | grep -q Darwin; then
+  export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+fi
+
+if [[ $PROMPT ]]; then
+    export PS1=$PROMPT
+fi

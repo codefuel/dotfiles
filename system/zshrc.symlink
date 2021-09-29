@@ -1,0 +1,67 @@
+#!/usr/bin/env zsh
+
+# Allow changing directories without using "cd"
+setopt AUTO_CD
+
+# Define history file
+HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
+SAVEHIST=5000
+HISTSIZE=2000
+
+# Share history across multiple zsh sessions
+setopt SHARE_HISTORY
+
+# Append to history
+setopt APPEND_HISTORY
+
+# Adds commands as they are typed, not at shell exit
+setopt INC_APPEND_HISTORY
+
+# Expire duplicates first
+setopt HIST_EXPIRE_DUPS_FIRST 
+
+# Do not store duplications
+setopt HIST_IGNORE_DUPS
+
+# Ignore duplicates when searching
+setopt HIST_FIND_NO_DUPS
+
+# Removes blank lines from history
+setopt HIST_REDUCE_BLANKS
+
+# Allow bash-style comments on the command line
+setopt interactivecomments
+
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+source "${DOTFILES}/zsh/colors.theme"
+source "${DOTFILES}/zsh/base.theme"
+
+for config_file in $(find ${DOTFILES} -type f -name *.func)
+do
+  source $config_file
+done
+
+# source our aliases
+for config_file in $(find ${DOTFILES} -type f -name aliases.zsh)
+do
+  source $config_file
+done
+
+# source every completion script in our repository
+for config_file in $(find ${DOTFILES} -type f -name completion.sh)
+do
+  source $config_file
+done
+
+# soruce our configurations
+for config_file in $(find ${DOTFILES} -type f -name config.zsh)
+do
+  source $config_file
+done
+
+unset config_file
+
+# use a .localrc file for our SUPER SECRECT STUFF
+if [ -a ~/.localrc ]; then source ~/.localrc; fi

@@ -5,3 +5,7 @@
 ###############################################################################
 if [ -r ~/.profile ]; then . ~/.profile; fi
 case "$-" in *i*) if [ -r ~/.bashrc ]; then . ~/.bashrc; fi;; esac
+
+# ZSH
+case "$-" in *i*) if [ -r ~/.zshenv ]; then . ~/.zshenv; fi;; esac
+case "$-" in *i*) if [ -r ~/.zshrc ]; then . ~/.zshrc; fi;; esac

@@ -1,0 +1,3 @@
+function zsh_functions () {
+  print -l ${(ok)functions}
+}
