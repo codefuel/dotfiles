@@ -49,6 +49,10 @@ if uname -s | grep -q Darwin; then
   export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
 
+# Node version manager
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
 # use a .localrc file for our SUPER SECRECT STUFF
 if [ -a ~/.localrc ]; then source ~/.localrc; fi
 
