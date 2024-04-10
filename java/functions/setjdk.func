@@ -25,4 +25,17 @@ function _setjdk_completion() {
   COMPREPLY=($(compgen -W "${options}" ${cur}))
 }
 
+
+# Allow zsh to execute "complete" command
+if test -n "$ZSH_VERSION"; then
+  autoload compinit
+  # TODO: Verify /usr/local/share/zsh has 755 permission to remove warning
+  compinit
+  autoload bashcompinit
+  bashcompinit
+fi
+# If needed, could test specifically for bash
+# elif test -n "$BASH_VERSION"; then
+
+# bash builtin command
 complete -F _setjdk_completion -o filenames setjdk

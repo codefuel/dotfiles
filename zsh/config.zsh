@@ -1,10 +1,4 @@
-#!/usr/bin/env bash
-
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-#setopt -s checkwinsize # COMMAND DOES NOT EXIST IN ZSH
-setopt -s cdspell
+#!/usr/bin/env zsh
 
 # colored grep
 export GREP_COLOR='1;33'
@@ -13,10 +7,10 @@ export GREP_COLOR='1;33'
 export LSCOLORS='Gxfxcxdxdxegedabagacad'
 
 # Load the theme
-source "${DOTFILES}/bash/prompt.bash"
+source "${DOTFILES}/zsh/prompt.zsh"
 
 # append to bash_history if Terminal.app quits
-setopt -s histappend
+setopt histappend
 
 # history handling
 #
