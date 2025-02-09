@@ -14,3 +14,9 @@ hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u
 
 # Visual bell
 vbell 'off'
+
+# Open multiple, named windows. Run custom commands in each window.
+screen -t z # Create a named window
+select 0 # Select first window
+stuff "echo 'tab1 cmd1'; echo 'tab1 cmd2'; echo 'tab1 cmd3'^M" # Stuff commands on the command line to run. ^M to enter a newline.
+screen -t z

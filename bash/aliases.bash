@@ -36,3 +36,6 @@ alias cbpaste='xclip -selection clipboard -o'
 alias ruler='screenruler'
 alias picker='gpick'
 alias colorpicker='gpick'
+
+# OSX
+alias restart_toolbar='sudo pkill TouchBarServer &&  sudo killall “ControlStrip”;'
